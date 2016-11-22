@@ -1,3 +1,5 @@
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 module.exports = {
   entry: [
     './src/index.js'
@@ -13,14 +15,27 @@ module.exports = {
       loader: 'babel',
       query: {
         presets: ['react', 'es2015', 'stage-1']
-      }
+      },
+    },
+    {
+      test: /\.scss$/,
+      loader: ExtractTextPlugin.extract(
+        'style', // The backup style loader (may not be needed?)
+        'css?sourceMap!sass?sourceMap'
+      )
     }]
   },
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
+  sassLoader: {
+    includePaths: [ 'style/sass' ]
+  },
   devServer: {
     historyApiFallback: true,
     contentBase: './'
-  }
+  },
+  plugins: [
+    new ExtractTextPlugin('public/grumpywizards.css')
+  ]
 };

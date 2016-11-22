@@ -1,0 +1,35 @@
+@import '../utils/_vars.scss';
+.home-page {
+  background: url('/images/splash_bg.png') no-repeat 50% 50% fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 100vh;
+  header {
+    .float-right {
+      div {
+        background: #2d4455;
+        padding: rem-calc(20);
+      }
+    }
+    .float-left {
+      padding: rem-calc(20 0 20 10);
+    }
+  }
+  .container {
+    margin: rem-calc(0 10);
+    color: $white;
+    h2 {
+      margin-bottom: rem-calc(60);
+      color: $white;
+    }
+    h1,
+    p {
+      color: $white;
+    }
+  }
+}
+.targetBlock {
+  position: absolute;
+}

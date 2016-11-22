@@ -1,12 +1,12 @@
-import React from 'react';
-import { IndexLink, Link } from 'react-router';
-import '../sass/components/_header.scss';
+import React from 'react'
+import { IndexLink, Link } from 'react-router'
+import './Header.scss'
 
 export const Header = () => (
   <header className='clearfix'>
     <div className='float-left'>
       <a href='/' title='weber-shandwick'>
-        EY{/*<img src='/images/logo.png' alt='app-logo' className='app-logo' />*/}
+        <img src='/images/logo.png' alt='app-logo' className='app-logo' />
       </a>
     </div>
     <div className='float-right'>

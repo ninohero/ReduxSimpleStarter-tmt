@@ -1,0 +1,67 @@
+//colors
+$white: #fff;
+$default-grey: #323232;
+$dark-grey: #343434;
+$darker-grey: #333;
+$medium-grey: #5b5b5b;
+$light-grey: #b2b2b2;
+$link-color: #1b74ba;
+$red: #ff5816;
+$green: #11c276;
+$disabled-btn: #f5f5f5;
+$cancel-btn: #ececec;
+$default-blue: #285f8e;
+$form-grey: #f2f2f2;
+
+// grid variables
+$grid-columns: 12;
+$grid-max-width: 60em;
+
+$rem-base: 16px !default;
+
+$breakpoints: (
+ 'tiny':   (max-width:  20em),
+ 'small':  (min-width:  26em),
+ 'medium': (min-width:  62em),
+ 'large':  (min-width: 75em)
+);
+
+%clearfix {
+  &:before,
+  &:after {
+  content: " ";
+  display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+.clearfix {
+  @extend %clearfix;
+}
+
+.strong {
+  font-family: bold “EYBold”, Arial;
+}
+.caption{
+  color: $dark-grey;
+  font-family: normal italic “EYLightItalic”, Arial;
+}
+.hide {
+  display: none;
+}
+.show {
+  display: inherit;
+}
+.float-left {
+  float: left;
+  text-align:left;
+}
+.float-right {
+  float: right;
+  text-align:right;
+}
+
+
+
+

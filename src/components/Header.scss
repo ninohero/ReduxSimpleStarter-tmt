@@ -1,0 +1,21 @@
+@import "../../style/sass/utils/_vars.scss"
+
+header {
+  background-color: $darker-grey;
+  color: $white;
+  .home-page & {
+    padding: 0;
+    .app-logo {
+      padding: 0;
+    }
+  }
+  .app-logo {
+    padding: rem-calc(10);
+  }
+}
+
+
+.route--active {
+  font-weight: bold;
+  text-decoration: underline;
+}
