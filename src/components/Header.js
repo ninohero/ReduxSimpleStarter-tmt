@@ -1,6 +1,6 @@
 import React from 'react';
 import { IndexLink, Link } from 'react-router';
-import '../sass/components/_header.scss';
+import './Header.scss';
 
 export const Header = () => (
   <header className='clearfix'>
@@ -10,9 +10,9 @@ export const Header = () => (
       </a>
     </div>
     <div className='float-right'>
-      <div>
+      {/*}<div>
         <button className='btn btn-blue login' target='2'>Log in / Register</button>
-      </div>
+      </div>*/}
       <nav>
         <IndexLink to='/' activeClassName='route--active'>
           Home

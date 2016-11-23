@@ -36,6 +36,6 @@ module.exports = {
     contentBase: './'
   },
   plugins: [
-    new ExtractTextPlugin('public/grumpywizards.css')
+    new ExtractTextPlugin('style/style.css')
   ]
 };

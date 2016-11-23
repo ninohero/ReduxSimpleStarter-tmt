@@ -1,8 +1,10 @@
-@import "../../style/sass/utils/_vars.scss"
+@import "../sass/utils/_vars.scss";
 
 header {
   background-color: $darker-grey;
+  border-bottom: 4px solid #bfbfbf;
   color: $white;
+  min-height: 91px;
   .home-page & {
     padding: 0;
     .app-logo {
@@ -13,7 +15,6 @@ header {
     padding: rem-calc(10);
   }
 }
-
 
 .route--active {
   font-weight: bold;
