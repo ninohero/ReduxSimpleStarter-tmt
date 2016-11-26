@@ -42,13 +42,13 @@ const store = createStore(
 )
 
 ReactDOM.render(
-  <Provider store={store}>
-    {/*}<App />*/}
-    <Router history={ history }>
+  <Provider store={createStoreWithMiddleware(reducers)}>
+    <App />
+    {/*<Router history={ history }>
       <Route path="/" component={ App } />
-      {/* Routes( store ) */}
+      {/* Routes( store ) * /}
       <Route path="*" component={ PageNotFound } />
     </Router>
-    <DevTools />
+    <DevTools />*/}
   </Provider>
   , document.querySelector('.container'));
