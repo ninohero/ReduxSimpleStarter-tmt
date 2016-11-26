@@ -1,8 +1,9 @@
 footer {
-  position: fixed;
-  bottom: 0;
   background-color: $light-grey;
+  bottom: 0;
   color: $medium-grey;
+  left: 0;
+  position: absolute;
   width: 100%;
   -webkit-animation: fadeIn 1s;
   -moz-animation: fadeIn 1s;

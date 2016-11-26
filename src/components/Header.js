@@ -10,7 +10,7 @@ export const Header = () => (
       </a>
     </div>
     <div className='float-right'>
-      {/*}<div>
+      {/*<div>
         <button className='btn btn-blue login' target='2'>Log in / Register</button>
       </div>*/}
       <nav>

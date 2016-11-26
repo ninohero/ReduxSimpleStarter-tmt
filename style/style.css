@@ -6,3 +6,7 @@ td, th {
   vertical-align: : middle !important!;
   text-align: center !important;
 }
+
+.content {
+  margin: 91px 0 0;
+}

@@ -1,23 +1,23 @@
 import React from 'react'
 import Header from './Header';
 import Footer from './Footer';
-import Modal from './Modal';
-import SystemTray from './SystemTray';
+import ProgressBar from './ProgressBar';
 import { connect } from 'react-redux';
+import '../sass/base.scss';
 
 function Layout( { children, user } ) {
 
   let classNames = "container-wrapper";
-  
+
   return (
     <div className={ classNames }>
-      <div className="container">
         <Header />
+        <div className="container">
+          <ProgressBar />
           {children}
+        </div>
         <Footer />
-        <Modal />
       </div>
-      <SystemTray />
     </div>
   )
 }
