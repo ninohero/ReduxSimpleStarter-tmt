@@ -1,14 +1,14 @@
 @import "../sass/utils/_vars.scss";
 footer {
-  bottom: 0;
+  margin-top: 115px;
   background-color: $lightest-grey;
   border-top: 1px solid $almost-lightest-grey;
   color: $lighter-grey;
   font-family: "EYBold", Arial;
   font-size: 11px;
   padding: 11px 22px;
-  position: absolute;
-  width: 100%;
+  position: static;
+  //width: 100%;
   // -webkit-animation: fadeIn 1s;
   // -moz-animation: fadeIn 1s;
   // -o-animation: fadeIn 1s;

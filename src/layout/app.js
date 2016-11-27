@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import Header from '../components/Header';
 import ProgressBar from '../components/ProgressBar';
 import ProjectWorkflowHeader from '../components/ProjectWorkflowHeader';
+import ProjectList from '../containers/ProjectList';
 //import SearchBar from '../containers/SearchBar';
 //import WeatherList from '../containers/WeatherList';
 import Footer from '../components/Footer';
@@ -19,6 +20,7 @@ function App( { children } ) {
       <div className="content" >
         <ProgressBar />
         <ProjectWorkflowHeader title="Project Information" description={headerTitle} />
+        <ProjectList defaultSearch="ooo" searchPlaceholder="Search Project List" />
         {children}
         {/*<SearchBar />
         <WeatherList />*/}

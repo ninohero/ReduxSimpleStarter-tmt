@@ -28,7 +28,7 @@ const fieldValues = {
   }
 }
 
-const projects  = {
+const staticProjects  = {
   '1a': {
     name: 'Honey Maid 2016 PR Execution',
     billingOffice: 'WS Chicago',
@@ -56,6 +56,33 @@ const projects  = {
     win: false,
     status :'pending'
   },
+  '4d': {
+    name: 'Honey Maid 2016 PR Execution',
+    billingOffice: 'WS Chicago',
+    estimatedStart: '2016/12/24',
+    durationMonths: 12,
+    totalBudget: 255000,
+    win: true,
+    status :'pending'
+  },
+  '5e': {
+    name: 'Lorem Ipsum Dolor sit Amet',
+    billingOffice: 'WS Chicago',
+    estimatedStart: '2016/11/2',
+    durationMonths: 8,
+    totalBudget: 150000,
+    win: true,
+    status :'started'
+  },
+  '6f': {
+    name: 'Aenan Neque Quam',
+    billingOffice: 'FSO New York',
+    estimatedStart: '2017/2/12',
+    durationMonths: 18,
+    totalBudget: 550000,
+    win: false,
+    status :'pending'
+  },
 }
 
-export { formDetails, fieldValues, projects }
+export { formDetails, fieldValues, staticProjects }

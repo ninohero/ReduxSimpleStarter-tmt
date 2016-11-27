@@ -12,10 +12,14 @@ import { syncHistoryWithStore, routerReducer } from 'react-router-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import ReduxPromise from 'redux-promise';
 import Routes from './routes';
+
+// Components
+import { ProjectList } from './containers/ProjectList';
 import { PageNotFound } from './layout/PageNotFound';
 
 import App from './layout/app';
 import reducers from './reducers';
+import Projects from './reducers/reducer_projects';
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
@@ -29,7 +33,8 @@ const DevTools = createDevTools(
 //const history = syncHistoryWithStore(browserHistory, store);
 
 const reducer = combineReducers({
-  routing: routerReducer
+  routing: routerReducer,
+  projects: Projects
 });
 
 const store = createStore(
@@ -51,4 +56,4 @@ ReactDOM.render(
     </Router>
     <DevTools />*/}
   </Provider>
-  , document.querySelector('.container'));
+  , document.querySelector('.mainContainer'));
