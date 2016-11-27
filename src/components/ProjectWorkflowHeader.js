@@ -6,7 +6,7 @@ export default class ProjectWorkflowHeader extends Component {
   }
   render() {
     return (
-      <div class="header">
+      <div className="header col-sm-12">
         <h1>{ this.props.title }</h1>
         <h5>{ this.props.description }</h5>
       </div>

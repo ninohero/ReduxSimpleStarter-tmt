@@ -1,8 +1,20 @@
-@import "../utils/_vars.scss";
+@import "../sass/utils/_vars.scss";
+
+.container {
+  margin: 0 !important;
+  padding: 0 !important;
+}
 
 header {
   background-color: $darker-grey;
+  border-bottom: 4px solid $tanish;
+  clear: both;
   color: $white;
+  height: 91px;
+  width:100%;
+  position:absolute;
+  top:0;
+  left:0;
   .home-page & {
     padding: 0;
     .app-logo {
@@ -12,4 +24,9 @@ header {
   .app-logo {
     padding: rem-calc(10);
   }
+}
+
+.route--active {
+  font-weight: bold;
+  text-decoration: underline;
 }

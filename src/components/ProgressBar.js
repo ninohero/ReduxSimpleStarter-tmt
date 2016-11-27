@@ -8,14 +8,16 @@ export default class ProgressBar extends Component {
   }
   render() {
     return (
-      <nav className="progressBar">
-        <ul>
-          <li>General</li>
-          <li>Resources</li>
-          <li>Non-Resource Budget Elements</li>
-          <li>Summary</li>
-        </ul>
-      </nav>
+      <div className="col-sm-8">
+        <nav className="progressBar row">
+          <ul>
+            <li className="col-sm-2">General</li>
+            <li className="col-sm-2">Resources</li>
+            <li className="col-sm-2">Non-Resource Budget Elements</li>
+            <li className="col-sm-2">Summary</li>
+          </ul>
+        </nav>
+      </div>
     )
   }
 }

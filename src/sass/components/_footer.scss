@@ -1,19 +1,22 @@
+@import "../sass/utils/_vars.scss";
 footer {
-  background-color: $light-grey;
   bottom: 0;
-  color: $medium-grey;
-  left: 0;
+  background-color: $lightest-grey;
+  border-top: 1px solid $almost-lightest-grey;
+  color: $lighter-grey;
+  font-family: "EYBold", Arial;
+  font-size: 11px;
+  padding: 11px 22px;
   position: absolute;
   width: 100%;
-  -webkit-animation: fadeIn 1s;
-  -moz-animation: fadeIn 1s;
-  -o-animation: fadeIn 1s;
-  animation: fadeIn 1s;
-  font-family: "EYBold", Arial;
-  @include breakpoint('medium') {
-    opacity: 0;
-    display:none;
-  }
+  // -webkit-animation: fadeIn 1s;
+  // -moz-animation: fadeIn 1s;
+  // -o-animation: fadeIn 1s;
+  // animation: fadeIn 1s;
+  // @include breakpoint('medium') {
+  //   opacity: 0;
+  //   display:none;
+  // }
   li {
     &.current {
       background: #644a6e;
