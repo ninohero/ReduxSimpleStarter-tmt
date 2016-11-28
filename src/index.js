@@ -7,15 +7,20 @@ import persistState from 'redux-localstorage';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { Router, Route, browserHistory } from 'react-router';
+import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import ReduxPromise from 'redux-promise';
 import Routes from './routes';
 
-// Components
-import { ProjectList } from './containers/ProjectList';
-import { PageNotFound } from './layout/PageNotFound';
+// Pages
+import ProjectList from './containers/ProjectList';
+import {PageNotFound} from './layout/PageNotFound';
+import {ProjectInfo} from './containers/ProjectInfo';
+import ProjectResources from './containers/ProjectResources';
+import NonResourceBudget from './containers/NonResourceBudget';
+import ProjectSummary from './containers/ProjectSummary';
+
 
 import App from './layout/app';
 import reducers from './reducers';
@@ -46,15 +51,19 @@ const store = createStore(
   //   promiseMiddleware(),
   // )
 )
+//
+
+//         <Route path="resources/:projectId" component={ProjectResources} />
+//         <Route path="non-resource/:projectId" component={NonResourceBudget} />
+//         <Route path="summary/:projectId" component={ProjectSummary} />
 
 ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
-    <App />
-    {/*<Router history={ history }>
-      <Route path="/" component={ App } />
-      { Routes( store ) }
-      <Route path="*" component={ PageNotFound } />
+  <Provider store={store}>
+    <Router history={ browserHistory }>
+      <Route path="/" component={App} >
+        <IndexRoute component={ProjectInfo} />
+        <Route path="/projects" component={ProjectInfo} />
+      </Route>
     </Router>
-    <DevTools />*/}
   </Provider>
   , document.querySelector('.mainContainer'));

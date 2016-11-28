@@ -22,8 +22,6 @@ export default class  ProjectList extends Component {
 
   contractIdFormatter(cell, row){
     //return <Link to={"contract/" + cell }>{cell}</Link>;
-    console.log("cell", cell)
-    console.log("row", row)
     return <a href={"project/" + cell }>{cell}</a>;
   }
 
@@ -34,7 +32,7 @@ export default class  ProjectList extends Component {
           startDate   = moment(project.estimatedStart),
           endDate     = startDate.add(project.durationMonths, 'M');
 
-      if(currentDate.isBefore(endDate)){
+      if(currentDate.isBefore(endDate) && project.status !== 'closed'){
         return {
           id: i,
           name: _.get( project, 'name'),
@@ -60,7 +58,7 @@ export default class  ProjectList extends Component {
           startDate   = moment(project.estimatedStart),
           endDate     = startDate.add(project.durationMonths, 'M');
 
-      if(currentDate.isAfter(endDate)){
+      if(currentDate.isAfter(endDate) || project.status === 'closed'){
         return {
           id: i,
           name: _.get( project, 'name'),

@@ -45,7 +45,7 @@ const staticProjects  = {
     durationMonths: 8,
     totalBudget: 150000,
     win: true,
-    status :'started'
+    status :'closed'
   },
   '3c': {
     name: 'Aenan Neque Quam',
@@ -90,7 +90,7 @@ const staticProjects  = {
     durationMonths: 12,
     totalBudget: 255000,
     win: true,
-    status :'pending'
+    status :'closed'
   },
   '2c': {
     name: 'Lorem Ipsum Dolor sit Amet',
@@ -99,7 +99,7 @@ const staticProjects  = {
     durationMonths: 8,
     totalBudget: 150000,
     win: true,
-    status :'started'
+    status :'closed'
   },
   '3d': {
     name: 'Aenan Neque Quam',
@@ -135,7 +135,7 @@ const staticProjects  = {
     durationMonths: 18,
     totalBudget: 550000,
     win: false,
-    status :'pending'
+    status :'closed'
   },
 }
 

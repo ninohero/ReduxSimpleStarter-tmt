@@ -16,16 +16,16 @@ export const Header = () => (
         <IndexLink to='/' activeClassName='route--active'>
           Home
         </IndexLink>
-        <Link to='/projects' activeClassName='route--active'>
-          Projects
+        <Link to='projects' activeClassName='route--active'>
+          Project Info
         </Link>
-        <Link to='/reports' activeClassName='route--active'>
+        <Link to='reports' activeClassName='route--active'>
           Reports
         </Link>
-        <Link to='/about' activeClassName='route--active'>
+        <Link to='about' activeClassName='route--active'>
           About
         </Link>
-        <Link to='/profile' activeClassName='route--active'>
+        <Link to='profile' activeClassName='route--active'>
           Profile
         </Link>
       </nav>

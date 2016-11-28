@@ -31,10 +31,11 @@ function onValidSubmit( formname, data ) {
   }, 5000);
 }
 
-class ProjectInfo extends Component {
+export default class ProjectInfo extends Component {
   render() {
     let description="lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum "
-    
+
+      console.log("in project info");
     return (
       <div className="container">
         <ProgressBar stage={1} />
@@ -72,21 +73,6 @@ class ProjectInfo extends Component {
                 addonAfter={<span className="input-percent-glyph">%</span>}
                 type="number" />
             </Col>
-          </Row>
-          <Row>
-
-          </Row>
-          <Row>
-
-          </Row>
-          <Row>
-
-          </Row>
-          <Row>
-
-          </Row>
-          <Row>
-
           </Row>
         </FormState>
       </div>
