@@ -1,16 +1,16 @@
-import { LOAD_PROJECTS } from '../actions/index';
+import { FETCH_PROJECTS } from '../actions/index';
+import { Map, fromJS } from 'immutable';
 
-export default function(state = [], action) {
-  console.log('load projects Action received: ', action);
+let initialState = fromJS({
+	projects: {},
+});
+
+export default function(state = initialState, action={}) {
+  console.log('Action received: ', action);
   switch(action.type) {
-    case LOAD_PROJECTS:
-      let projects = {}
-        action.payload.data.forEach( data => {
-          projects[ data._id ] = {
-          data: [data]
-        }
-      });
-      return state.setIn( [ action.formName ], fromJS( projects ) );
-  }
+    case FETCH_PROJECTS:
+      return [action.payload.data, ...state];
+  		return state.setIn( [ action.formName ], fromJS( projects ) );
+    }
   return state;
 }

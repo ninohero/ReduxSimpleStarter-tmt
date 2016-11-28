@@ -20,6 +20,7 @@ import { PageNotFound } from './layout/PageNotFound';
 import App from './layout/app';
 import reducers from './reducers';
 import Projects from './reducers/reducer_projects';
+import projectForm from './reducers/projectForm';
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
@@ -51,7 +52,7 @@ ReactDOM.render(
     <App />
     {/*<Router history={ history }>
       <Route path="/" component={ App } />
-      {/* Routes( store ) * /}
+      { Routes( store ) }
       <Route path="*" component={ PageNotFound } />
     </Router>
     <DevTools />*/}

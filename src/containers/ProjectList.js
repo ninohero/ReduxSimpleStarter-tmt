@@ -1,10 +1,9 @@
 import _ from 'lodash';
 import React, { Component } from 'react'
-/*import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 // actions
 import { fetchProjects } from '../actions/index';
-*/
 // data
 import { staticProjects } from './staticData';
 // components
@@ -39,7 +38,6 @@ export default class  ProjectList extends Component {
         totalBudget: _.get( project, 'totalBudget'),
         win: _.get( project, 'win'),
         status: _.get( project, 'status'),
-
       }
     });
 
@@ -85,46 +83,7 @@ export default class  ProjectList extends Component {
   }
 }
 
-/*function mapStateToProps({ projects }) {
-  return (
-    { projects } // same as projects: projects
-  )
-}
-
-export default connect(mapStateToProps)(ProjectList);*/
-
-
-/*function ProjectList( { projects } ) {
-
-  //console.log('********** LOADING CONTRACTS ************', contracts );
-
-  return (
-    <div className="list-view">
-      <h1>Contract Listing</h1>
-      <p>This is a listing of all current contracts being tracked on the distributed ledger</p>
-      <BootstrapTable data={ mapProjects( projects ) } striped={true} hover={true}>
-        <TableHeaderColumn dataSort={true} isKey={true} dataField="id" dataFormat={contractIdFormatter}>Contract ID</TableHeaderColumn>
-        <TableHeaderColumn dataSort={true} dataField="name">Project Name</TableHeaderColumn>
-        <TableHeaderColumn dataSort={true} dataField="billingOffice" >Billing Office</TableHeaderColumn>
-        <TableHeaderColumn dataSort={true} dataField="durationMonths">Duration</TableHeaderColumn>
-        <TableHeaderColumn dataSort={true} dataField="totalBudget" dataFormat={priceFormatter}>Total Budget</TableHeaderColumn>
-        <TableHeaderColumn dataSort={true} dataField="win">Win/Loss</TableHeaderColumn>
-        <TableHeaderColumn dataSort={true} dataField="status">Status</TableHeaderColumn>
-      </BootstrapTable>
-      <p className="table-totals">
-        <label>Totals:</label>
-        <span className="money">
-          <i className="glyphicon glyphicon-usd"></i>{ getTotals( contracts ) }
-        </span>
-      </p>
-      <Link to="/reinsurance">
-        <input className="btn btn-primary" formNoValidate={true} type="submit" defaultValue="Enter New Contract" />
-      </Link>
-    </div>
-  );
-}
-
-export default connect(
+/*export default connect(
   state => ({
     projects: state.projects.getIn(['reinsurance']).toJSON()
   }),

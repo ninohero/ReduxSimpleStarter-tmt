@@ -47,7 +47,7 @@ class ProjectInfo extends Component {
               type="number" />
           </Col>
         </Row>
-        <FormState name={ 'testing' }
+        <FormState name={ 'project' }
         onValidSubmit={ onValidSubmit.bind( this, 'projectAdd' ) }
         disabled={false}
         onSave={ save }
