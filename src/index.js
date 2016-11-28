@@ -16,7 +16,7 @@ import Routes from './routes';
 // Pages
 import ProjectList from './containers/ProjectList';
 import {PageNotFound} from './layout/PageNotFound';
-import {ProjectInfo} from './containers/ProjectInfo';
+import ProjectInfo from './containers/ProjectInfo';
 import ProjectResources from './containers/ProjectResources';
 import NonResourceBudget from './containers/NonResourceBudget';
 import ProjectSummary from './containers/ProjectSummary';
@@ -51,18 +51,16 @@ const store = createStore(
   //   promiseMiddleware(),
   // )
 )
-//
-
-//         <Route path="resources/:projectId" component={ProjectResources} />
-//         <Route path="non-resource/:projectId" component={NonResourceBudget} />
-//         <Route path="summary/:projectId" component={ProjectSummary} />
 
 ReactDOM.render(
   <Provider store={store}>
     <Router history={ browserHistory }>
       <Route path="/" component={App} >
-        <IndexRoute component={ProjectInfo} />
-        <Route path="/projects" component={ProjectInfo} />
+        <IndexRoute component={ProjectList} />
+        <Route path="project-info/:projectId" component={ProjectInfo} />
+        <Route path="resources/:projectId" component={ProjectResources} />
+        <Route path="non-resource/:projectId" component={NonResourceBudget} />
+        <Route path="summary/:projectId" component={ProjectSummary} />
       </Route>
     </Router>
   </Provider>

@@ -7,11 +7,11 @@ import { fetchWeather } from '../actions/index';
 import { save } from '../actions/form';
 
 // components
-import { ProgressBar } from '../components/ProgressBar';
-import { ProjectWorkflowHeader } from '../components/ProjectWorkflowHeader';
+import ProgressBar from '../components/ProgressBar';
+import ProjectWorkflowHeader from '../components/ProjectWorkflowHeader';
 import FRC from 'formsy-react-components';
 import FormState from '../components/form/FormState';
-import { Col, Row, FormGroup, InputGroup } from 'react-bootstrap';
+import { Col, Row, FormGroup, InputGroup, FormControl } from 'react-bootstrap';
 
 const { Input,
         //Checkbox,
@@ -33,35 +33,35 @@ function onValidSubmit( formname, data ) {
 
 export default class ProjectInfo extends Component {
   render() {
-    let description="lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum "
+    let description="lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum ",
+        firstWidth = 40;
 
       console.log("in project info");
     return (
       <div className="container">
-        <ProgressBar stage={1} />
+        <ProgressBar />
         <ProjectWorkflowHeader title="Project Information" description={description} />
-        <Row>
-          <Col xs={firstWidth} className="form_row">
-            <Input
-              label="Commission"
-              name="commission"
-              placeholder=""
-              addonAfter={<span className="input-percent-glyph">%</span>}
-              type="number" />
-          </Col>
-        </Row>
         <FormState name={ 'project' }
         onValidSubmit={ onValidSubmit.bind( this, 'projectAdd' ) }
         disabled={false}
         onSave={ save }
         className="update_bid_form">
+          <Row>
+            <Col xs={firstWidth} className="form_row">
+              <Input
+                label="Commission"
+                name="commission"
+                placeholder=""
+                addonAfter={<span className="input-percent-glyph">%</span>}
+                type="number" />
+            </Col>
+          </Row>
           <FormGroup>
             <InputGroup>
               <InputGroup.Addon>
                 <label>blah</label>
-                <input type="radio" aria-label="..." name="blah"/>
+                <input type="text" aria-label="..." name="blah"/>
               </InputGroup.Addon>
-              <FormControl type="text" />
             </InputGroup>
           </FormGroup>
           <Row>
@@ -74,7 +74,7 @@ export default class ProjectInfo extends Component {
                 type="number" />
             </Col>
           </Row>
-        </FormState>
+        </FormState>*/}
       </div>
     )
   }
