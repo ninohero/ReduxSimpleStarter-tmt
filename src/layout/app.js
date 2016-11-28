@@ -7,23 +7,18 @@ import Header from '../components/Header';
 import ProgressBar from '../components/ProgressBar';
 import ProjectWorkflowHeader from '../components/ProjectWorkflowHeader';
 import ProjectList from '../containers/ProjectList';
-//import SearchBar from '../containers/SearchBar';
-//import WeatherList from '../containers/WeatherList';
 import Footer from '../components/Footer';
 import '../sass/base.scss';
 
 function App( { children } ) {
-  let headerTitle="lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum "
   return (
     <div>
       <Header />
       <div className="content" >
+        {/* todo: make the progressbar only show if user is in the add project workflow */}
         <ProgressBar />
-        <ProjectWorkflowHeader title="Project Information" description={headerTitle} />
         <ProjectList defaultSearch="ooo" searchPlaceholder="Search Project List" />
         {children}
-        {/*<SearchBar />
-        <WeatherList />*/}
       </div>
       <Footer />
     </div>

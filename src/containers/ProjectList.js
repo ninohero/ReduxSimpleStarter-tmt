@@ -10,6 +10,7 @@ import { staticProjects } from './staticData';
 // components
 import { Link } from 'react-router'
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
+import ProjectWorkflowHeader from '../components/ProjectWorkflowHeader';
 
 export default class  ProjectList extends Component {
   constructor(props) {
@@ -51,7 +52,7 @@ export default class  ProjectList extends Component {
 
     return _.pull(projectMap, undefined);
   }
-
+  // TODO: combine these two mapProjects methods
   mapArchivedProjects( projects ) {
     let keys = Object.keys(projects);
     let projectMap = _.map( projects, ( project,i ) => {
@@ -91,12 +92,11 @@ export default class  ProjectList extends Component {
       searchField: this.createCustomSearchField
     };
 
-    console.log("projects", staticProjects);
+    let description = "This is a listing of all current contracts being tracked on the distributed ledger";
     return (
-      <div className="list-view">
-        <h1>Project Listing</h1>
-        <p>This is a listing of all current contracts being tracked on the distributed ledger</p>
-        <div className="dividingContainer">
+      <div className="project-list-view">
+        <ProjectWorkflowHeader title="Project Listing" description={description} />
+        <div className="dividing-container">
           <h3>Active Projects</h3>
           <BootstrapTable
               data={ this.mapCurrentProjects( staticProjects ) }
@@ -114,13 +114,12 @@ export default class  ProjectList extends Component {
           </BootstrapTable>
         </div>
 
-      <div className="dividingContainer">
+      <div className="dividing-container">
         <h3>Archived Projects</h3>
         <BootstrapTable
             data={ this.mapArchivedProjects( staticProjects ) }
             striped={true}
-            hover={true}
-            search>
+            hover={true} >
           <TableHeaderColumn dataSort={true} isKey={true} width="40" dataField="id" dataFormat={this.contractIdFormatter}>Contract ID</TableHeaderColumn>
           <TableHeaderColumn dataSort={true} dataField="name">Project Name</TableHeaderColumn>
           <TableHeaderColumn dataSort={true} dataField="billingOffice" >Billing Office</TableHeaderColumn>

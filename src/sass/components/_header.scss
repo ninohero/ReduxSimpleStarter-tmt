@@ -1,5 +1,3 @@
-@import "../sass/utils/_vars.scss";
-
 .container {
   margin: 0 !important;
   padding: 0 !important;
@@ -29,4 +27,8 @@ header {
 .route--active {
   font-weight: bold;
   text-decoration: underline;
+}
+
+.project-header {
+  margin: 2rem 0 .75rem;
 }

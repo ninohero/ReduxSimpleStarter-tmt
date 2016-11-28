@@ -1,0 +1,11 @@
+.project-list-view {
+  thead {
+    border: 1px solid $darker-grey;
+    border-width: 0 0 1px;
+  }
+  .dividing-container {
+    clear: both;
+    border-top: 1px solid $medium-grey;
+    padding: .75rem;
+  }
+}

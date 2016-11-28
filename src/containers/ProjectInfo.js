@@ -33,10 +33,12 @@ function onValidSubmit( formname, data ) {
 
 class ProjectInfo extends Component {
   render() {
+    let description="lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum "
+    
     return (
       <div className="container">
         <ProgressBar stage={1} />
-        <ProjectWorkflowHeader title="ProjectInformation" description={description} />
+        <ProjectWorkflowHeader title="Project Information" description={description} />
         <Row>
           <Col xs={firstWidth} className="form_row">
             <Input
