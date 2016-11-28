@@ -37,6 +37,7 @@
     "formsy-react-components": "^0.8.1",
     "immutable": "^3.8.1",
     "lodash": "^3.10.1",
+    "moment": "^2.17.0",
     "react": "^0.14.3",
     "react-bootstrap": "^0.30.7",
     "react-bootstrap-table": "^3.0.0-beta.2",

@@ -83,6 +83,60 @@ const staticProjects  = {
     win: false,
     status :'pending'
   },
+  '1b': {
+    name: 'Honey Maid 2016 PR Execution',
+    billingOffice: 'WS Chicago',
+    estimatedStart: '2014/12/24',
+    durationMonths: 12,
+    totalBudget: 255000,
+    win: true,
+    status :'pending'
+  },
+  '2c': {
+    name: 'Lorem Ipsum Dolor sit Amet',
+    billingOffice: 'WS Chicago',
+    estimatedStart: '2012/11/2',
+    durationMonths: 8,
+    totalBudget: 150000,
+    win: true,
+    status :'started'
+  },
+  '3d': {
+    name: 'Aenan Neque Quam',
+    billingOffice: 'FSO New York',
+    estimatedStart: '2017/2/12',
+    durationMonths: 18,
+    totalBudget: 550000,
+    win: false,
+    status :'pending'
+  },
+  '4e': {
+    name: 'Honey Maid 2016 PR Execution',
+    billingOffice: 'WS Chicago',
+    estimatedStart: '2012/12/24',
+    durationMonths: 12,
+    totalBudget: 255000,
+    win: true,
+    status :'pending'
+  },
+  '5f': {
+    name: 'Lorem Ipsum Dolor sit Amet',
+    billingOffice: 'WS Chicago',
+    estimatedStart: '2015/11/2',
+    durationMonths: 8,
+    totalBudget: 150000,
+    win: true,
+    status :'started'
+  },
+  '6g': {
+    name: 'Aenan Neque Quam',
+    billingOffice: 'FSO New York',
+    estimatedStart: '2014/2/12',
+    durationMonths: 18,
+    totalBudget: 550000,
+    win: false,
+    status :'pending'
+  },
 }
 
 export { formDetails, fieldValues, staticProjects }

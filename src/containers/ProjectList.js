@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import moment from 'moment';
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -25,23 +26,54 @@ export default class  ProjectList extends Component {
     return <a href={"project/" + cell }>{cell}</a>;
   }
 
-  mapProjects( projects ) {
+  mapCurrentProjects( projects ) {
     let keys = Object.keys(projects);
-    let projectMap = _.map( projects, ( project,i ) => { // blah
-      console.log("key",i )
-      return {
-        id: i,
-        name: _.get( project, 'name'),
-        billingOffice: _.get( project, 'billingOffice'),
-        estimatedStart: _.get( project, 'estimatedStart'),
-        durationMonths: _.get( project, 'durationMonths'),
-        totalBudget: _.get( project, 'totalBudget'),
-        win: _.get( project, 'win'),
-        status: _.get( project, 'status'),
+    let projectMap = _.map( projects, ( project,i ) => {
+      let currentDate = moment(),
+          startDate   = moment(project.estimatedStart),
+          endDate     = startDate.add(project.durationMonths, 'M');
+
+      if(currentDate.isBefore(endDate)){
+        return {
+          id: i,
+          name: _.get( project, 'name'),
+          billingOffice: _.get( project, 'billingOffice'),
+          estimatedStart: _.get( project, 'estimatedStart'),
+          durationMonths: _.get( project, 'durationMonths'),
+          totalBudget: _.get( project, 'totalBudget'),
+          win: _.get( project, 'win'),
+          status: _.get( project, 'status'),
+        }
+      } else {
+        // return nothing
       }
     });
 
-    return projectMap;
+    return _.pull(projectMap, undefined);
+  }
+
+  mapArchivedProjects( projects ) {
+    let keys = Object.keys(projects);
+    let projectMap = _.map( projects, ( project,i ) => {
+      let currentDate = moment(),
+          startDate   = moment(project.estimatedStart),
+          endDate     = startDate.add(project.durationMonths, 'M');
+
+      if(currentDate.isAfter(endDate)){
+        return {
+          id: i,
+          name: _.get( project, 'name'),
+          billingOffice: _.get( project, 'billingOffice'),
+          estimatedStart: _.get( project, 'estimatedStart'),
+          durationMonths: _.get( project, 'durationMonths'),
+          totalBudget: _.get( project, 'totalBudget'),
+          win: _.get( project, 'win'),
+          status: _.get( project, 'status'),
+        }
+      }
+    });
+
+    return _.pull(projectMap, undefined);
   }
 
   createCustomSearchField = (props) => {
@@ -64,8 +96,28 @@ export default class  ProjectList extends Component {
       <div className="list-view">
         <h1>Project Listing</h1>
         <p>This is a listing of all current contracts being tracked on the distributed ledger</p>
+        <div className="dividingContainer">
+          <h3>Active Projects</h3>
+          <BootstrapTable
+              data={ this.mapCurrentProjects( staticProjects ) }
+              striped={true}
+              hover={true}
+              search>
+            <TableHeaderColumn dataSort={true} isKey={true} width="40" dataField="id" dataFormat={this.contractIdFormatter}>Contract ID</TableHeaderColumn>
+            <TableHeaderColumn dataSort={true} dataField="name">Project Name</TableHeaderColumn>
+            <TableHeaderColumn dataSort={true} dataField="billingOffice" >Billing Office</TableHeaderColumn>
+            <TableHeaderColumn dataSort={true} dataField="estimatedStart">Est. Start</TableHeaderColumn>
+            <TableHeaderColumn dataSort={true} dataField="durationMonths">Duration</TableHeaderColumn>
+            <TableHeaderColumn dataSort={true} dataField="totalBudget" dataFormat={this.priceFormatter}>Total Budget</TableHeaderColumn>
+            <TableHeaderColumn dataSort={true} dataField="win">Win/Loss</TableHeaderColumn>
+            <TableHeaderColumn dataSort={true} dataField="status">Status</TableHeaderColumn>
+          </BootstrapTable>
+        </div>
+
+      <div className="dividingContainer">
+        <h3>Archived Projects</h3>
         <BootstrapTable
-            data={ this.mapProjects( staticProjects ) }
+            data={ this.mapArchivedProjects( staticProjects ) }
             striped={true}
             hover={true}
             search>
@@ -79,6 +131,7 @@ export default class  ProjectList extends Component {
           <TableHeaderColumn dataSort={true} dataField="status">Status</TableHeaderColumn>
         </BootstrapTable>
       </div>
+    </div>
     )
   }
 }
