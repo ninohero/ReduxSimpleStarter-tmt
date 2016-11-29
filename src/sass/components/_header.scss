@@ -2,7 +2,10 @@
   margin: 0 !important;
   padding: 0 !important;
 }
-
+// /* this just clears the header since clearfix isn't working (pry becasue position fixed)*/
+// .page-container {
+//   margin-top: 91px;
+// }
 header {
   background-color: $darker-grey;
   border-bottom: 4px solid $tanish;

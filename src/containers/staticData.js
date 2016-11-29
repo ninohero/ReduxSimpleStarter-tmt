@@ -41,6 +41,16 @@ const fieldValues = {
       {value: 'aus-dollars', label: 'Australiam Dollars'},
       {value: 'mx-peso', label: 'Mexican Peso'},
       {value: 'euro', label: 'US Euro'}
+    ],
+    compenationType: [
+      {value: '', label: 'Compensation Type'},
+      {value: 'value-one', label: 'Value One'},
+      {value: 'value-two', label: 'Value Two'},
+      {value: 'value-three', label: 'Value Three'},
+    ],
+    // to simplify things monthly is the only choice for plan by
+    durationIncrement: [
+      {value: 'monthly', label: 'Monthly'}
     ]
   },
   checkboxes: {

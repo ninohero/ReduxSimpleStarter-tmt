@@ -1,7 +1,7 @@
 .project-form {
   .form-group {
     clear: both;
-    padding: 2rem;
+    padding: 2rem 2rem 0;
     border-top: 1px solid #dfdfdf;
     min-height: 165px;
     select {
@@ -24,6 +24,27 @@
         min-width: 150px;
         float: left;
       }
+    }
+    .deliverables_col {
+      .field-container {
+        min-width: none;
+        max-width: none;
+      }
+    }
+  }
+  .controlled_components {
+    input {
+      background-color: $super-lightest-grey;
+    }
+  }
+  .deliverables_row {
+    div.col-sm-9 {
+      width: 60%;
+      padding-left: 0;
+    }
+    label {
+      font-size: 1.5rem;
+      font-weight: 500;
     }
   }
 }

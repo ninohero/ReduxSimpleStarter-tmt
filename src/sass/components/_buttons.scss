@@ -2,10 +2,10 @@
 %btn {
   display: inline-block;
   padding: .938em 1.875em;
-  color: $white;
+  color: $dark-grey;
   cursor: pointer;
   border: none;
-  background-color: $dark-grey;
+  //background-color: $dark-grey;
   @include box-shadow(0 1px 3px 0px rgba(0, 0, 0, 0.4));
   margin: rem-calc(0 2);
   text-decoration: none;
@@ -57,6 +57,6 @@ button {
     @include button-bg($disabled-btn, #ccc);
   }
   &-light-grey {
-    @include button-bg(#ececec, #999999, #ececec);
+    @include button-bg($lightest-grey, $almost-lightest-grey, #ececec);
   }
 }
