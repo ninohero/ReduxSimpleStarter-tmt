@@ -15,9 +15,32 @@ const formDetails = {
 
 const fieldValues = {
   dropdowns: {
-    accountsNotice: [
+    region: [
       {value: '', label: 'Please select…'},
-      {value: 'half-yearly', label: 'Half-Yearly'},
+      {value: 'americas', label: 'The Americas'},
+      {value: 'asia', label: 'Asia'},
+      {value: 'ociania', label: 'Ociania'},
+      {value: 'europe', label: 'Europe'}
+    ],
+    country: [
+      {value: '', label: 'Please select…'},
+      {value: 'united-states', label: 'United States'},
+      {value: 'nigeria', label: 'Nigeria'},
+      {value: 'germany', label: 'Germany'},
+      {value: 'france', label: 'France'},
+      {value: 'slovenia', label: 'Slovenia'},
+    ],
+    billingOffice: [
+      {value: '', label: 'Please select…'},
+      {value: 'ws-chicago', label: 'WS Chicago'},
+    ],
+    currency: [
+      {value: '', label: 'Please select…'},
+      {value: 'us-dollars', label: 'US Dollars'},
+      {value: 'cnd-dollars', label: 'Canadian Dollars'},
+      {value: 'aus-dollars', label: 'Australiam Dollars'},
+      {value: 'mx-peso', label: 'Mexican Peso'},
+      {value: 'euro', label: 'US Euro'}
     ]
   },
   checkboxes: {

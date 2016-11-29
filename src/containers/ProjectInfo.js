@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { fieldValues } from './staticData';
 
 // actions
 import { fetchWeather } from '../actions/index';
@@ -12,11 +13,9 @@ import ProjectWorkflowHeader from '../components/ProjectWorkflowHeader';
 import FRC from 'formsy-react-components';
 import FormState from '../components/form/FormState';
 import { Col, Row, FormGroup, InputGroup, FormControl } from 'react-bootstrap';
+import { SelectField } from '../components/SelectField';
 
-const { Input,
-        //Checkbox,
-        //Select,
-      } = FRC;
+const { Input, Radio } = FRC;
 
 let staticText="lorem ipsom lorem ipsom lorem ipsom lorem ipsom lorem ipsom lorem ipsom lorem ipsom lorem ipsom lorem ipsom lorem ipsom ";
 
@@ -32,11 +31,23 @@ function onValidSubmit( formname, data ) {
 }
 
 export default class ProjectInfo extends Component {
+  constructor(props) {
+    super(props);
+    this.getOptions = this.getOptions.bind(this)
+  }
+  getOptions(opts){
+    console.log("opts", opts);
+    let options = _.map(opts,(opt) => {
+      return <option key={opt.value} value={opt.value}>{opt.label}</option>
+    })
+    return options;
+  }
   render() {
     let description="lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum ",
-        firstWidth = 40;
+        firstWidth = 100,
+        secondWidth= 600,
+        requireAll = true;
 
-      console.log("in project info");
     return (
       <div className="container">
         <ProgressBar />
@@ -45,23 +56,36 @@ export default class ProjectInfo extends Component {
         onValidSubmit={ onValidSubmit.bind( this, 'projectAdd' ) }
         disabled={false}
         onSave={ save }
-        className="update_bid_form">
-          <Row>
-            <Col xs={firstWidth} className="form_row">
-              <Input
-                label="Commission"
-                name="commission"
-                placeholder=""
-                addonAfter={<span className="input-percent-glyph">%</span>}
-                type="number" />
+        className="project-form basic">
+          <FormGroup>
+            <Col sm={firstWidth}>
+              <h3>Location</h3>
             </Col>
-          </Row>
+            <Col sm={secondWidth} className="form_row">
+              <SelectField label="Region"
+                name="region"
+                defaultValue="Select a Region"
+                className="col-sm-3">
+                { this.getOptions(fieldValues.dropdowns.region) }
+              </SelectField>
+              <SelectField label="Country"
+                name="country" >
+                { this.getOptions(fieldValues.dropdowns.country) }
+              </SelectField>
+              <SelectField label="Billing Office"
+                name="billingOffice" >
+                { this.getOptions(fieldValues.dropdowns.billingOffice) }
+              </SelectField>
+              <SelectField label="Currency"
+                name="currency" >
+                { this.getOptions(fieldValues.dropdowns.currency) }
+              </SelectField>
+            </Col>
+          </FormGroup>
           <FormGroup>
             <InputGroup>
-              <InputGroup.Addon>
                 <label>blah</label>
-                <input type="text" aria-label="..." name="blah"/>
-              </InputGroup.Addon>
+                <se className="col-6-sm" type="text" aria-label="..." name="blah"/>
             </InputGroup>
           </FormGroup>
           <Row>
@@ -74,7 +98,7 @@ export default class ProjectInfo extends Component {
                 type="number" />
             </Col>
           </Row>
-        </FormState>*/}
+        </FormState>
       </div>
     )
   }
